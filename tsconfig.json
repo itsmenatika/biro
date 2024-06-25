@@ -1,0 +1,17 @@
+{
+    "include": ["src/**/*.ts"],
+    "exclude": ["nodemodules"],
+    "compilerOptions": {
+        "noFallthroughCasesInSwitch": false,
+      "incremental": true,
+      "allowJs": true,
+      "checkJs": false,
+      "outDir": "build",
+      "sourceMap": true,
+      "strict": true,
+      "alwaysStrict": true,
+      "moduleResolution": "node",
+      "esModuleInterop": true
+    },
+
+}

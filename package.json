@@ -1,0 +1,33 @@
+{
+  "name": "biro",
+  "version": "1.0.0",
+  "description": "just discord bot",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "tsc --build",
+    "clean": "tsc --build --clean",
+    "start": "node build/index.js",
+    "nodemon": "nodemon --watch src src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsmenatika/biro.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itsmenatika/biro/issues"
+  },
+  "homepage": "https://github.com/itsmenatika/biro#readme",
+  "dependencies": {
+    "discord.js": "^14.15.3"
+  },
+  "devDependencies": {
+    "@swc/core": "^1.6.5",
+    "@swc/helpers": "^0.5.11",
+    "nodemon": "^3.1.4",
+    "regenerator-runtime": "^0.14.1",
+    "ts-node": "^10.9.2"
+  }
+}
