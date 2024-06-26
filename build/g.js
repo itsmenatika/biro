@@ -1,12 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.test = test;
+exports.test = void 0;
 function test() {
-    var g = {
-        aha: 10,
+    const g = {
+        aha: 13,
         test: 3
     };
     return g;
 }
+exports.test = test;
 ;
 //# sourceMappingURL=g.js.map

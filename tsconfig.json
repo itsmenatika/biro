@@ -11,7 +11,10 @@
       "strict": true,
       "alwaysStrict": true,
       "moduleResolution": "node",
-      "esModuleInterop": true
+      "esModuleInterop": true,
+      "target": "ES2022",
+      "module": "CommonJS",
+      "removeComments": true
     },
 
 }
