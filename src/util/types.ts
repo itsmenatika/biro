@@ -1,12 +1,12 @@
 import { Client, CommandInteraction, PermissionsBitField } from "discord.js";
 
-type callbackFunction = (client: Client, interaction: CommandInteraction) => Promise<Boolean | void>;
+type callbackFunction = (client: Client, interaction: CommandInteraction, localization: localization) => Promise<Boolean | void>;
 
 enum localization {
-    pl = "PL",
-    en = "EN",
-    en_GB = "EN",
-    en_UK = "EN"
+    pl = "pl",
+    en = "en",
+    en_GB = "en",
+    en_UK = "en"
 }
 
 interface DynamicStyleObject {

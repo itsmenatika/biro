@@ -36,7 +36,7 @@ eventTypes.forEach((eventType) => {
     });
     client.on(eventType.name, async (interaction) => {
         for (let eventFile of eventFiles) {
-            await eventFile(client, interaction);
+            await eventFile(client, interaction, interaction.locale);
         }
     });
     console.log(`EVENTS: registering events/${eventType.name} DONE`);

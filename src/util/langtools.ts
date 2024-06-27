@@ -7,6 +7,9 @@ import { DynamicStyleObject } from "./types";
 
 
 function getMessage(message: string, loc: localization): string{
+    if(loc as String == "en-US" || loc as String == "en-GB"){
+        loc = localization.en;
+    }
     try {
         switch(loc){
             case localization.pl: {
@@ -17,8 +20,13 @@ function getMessage(message: string, loc: localization): string{
             }
         }  
     } catch (error) {
+        console.log("Error occured!");
+        console.log(`util/langtools.ts loc: ${loc}   message: ${message}`)
         return `${message}0${localization}`;
     }
+
+    console.log("Something went terribly wrong, that line of code shouldn't even be possible to execute!");
+    console.log(`util/langtools.ts loc: ${loc}   message: ${message}`)
 
     // because typescript doesnt like me, that will never occur
     return "wtf";

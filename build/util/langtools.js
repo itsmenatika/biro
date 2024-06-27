@@ -5,6 +5,9 @@ const pl_json = require("../../localization/pl.json");
 const en_json = require("../../localization/en.json");
 const types_1 = require("./types");
 function getMessage(message, loc) {
+    if (loc == "en-US" || loc == "en-GB") {
+        loc = types_1.localization.en;
+    }
     try {
         switch (loc) {
             case types_1.localization.pl: {
@@ -16,8 +19,12 @@ function getMessage(message, loc) {
         }
     }
     catch (error) {
+        console.log("Error occured!");
+        console.log(`util/langtools.ts loc: ${loc}   message: ${message}`);
         return `${message}0${types_1.localization}`;
     }
+    console.log("Something went terribly wrong, that line of code shouldn't even be possible to execute!");
+    console.log(`util/langtools.ts loc: ${loc}   message: ${message}`);
     return "wtf";
 }
 exports.getMessage = getMessage;

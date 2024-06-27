@@ -1,3 +1,10 @@
 {
-    
+    "_COMMENT000001": "----Commands----",
+    "_COMMENT000020": "-category names-",
+    "cat_misc_name": "inne",
+    "cat_misc_desc": "nie wiem, to co mówi nazwa",
+    "_COMMENT000030": "commands names",
+    "cmd_help_name": "pomoc",
+    "cmd_help_desc": "uzyskaj pomoc",
+    "cmd_help_title": "lista komend"
 }

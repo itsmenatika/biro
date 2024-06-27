@@ -1,8 +1,9 @@
 import { Client, Interaction, PermissionsBitField } from "discord.js";
+import { localization } from "../../util/types";
 
 
 
-module.exports = async (client: Client, interaction: Interaction) => {
+module.exports = async (client: Client, interaction: Interaction, loc: localization) => {
     // console.log(interaction);
     if(!interaction.isCommand()) return;
 
@@ -25,5 +26,5 @@ module.exports = async (client: Client, interaction: Interaction) => {
         }
     }
 
-    await cmd?.callback(client,interaction);
+    await cmd?.callback(client,interaction, loc);
 }

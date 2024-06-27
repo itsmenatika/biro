@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-module.exports = async (client, interaction) => {
+module.exports = async (client, interaction, loc) => {
     if (!interaction.isCommand())
         return;
     const cmd = global.commandData.get(interaction.commandName);
@@ -18,6 +18,6 @@ module.exports = async (client, interaction) => {
             await interaction.reply(notEnoughPermission);
         }
     }
-    await cmd?.callback(client, interaction);
+    await cmd?.callback(client, interaction, loc);
 };
 //# sourceMappingURL=commandHandler.js.map

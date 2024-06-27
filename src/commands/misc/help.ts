@@ -1,5 +1,6 @@
 import { Client, CommandInteraction, Embed, EmbedBuilder, Interaction, PermissionsBitField, SlashCommandBuilder } from "discord.js";
-import { cmdData } from "../../util/types";
+import { cmdData, localization } from "../../util/types";
+import { getMessage } from "../../util/langtools";
 
 
 const command: cmdData = {
@@ -8,10 +9,10 @@ const command: cmdData = {
         PermissionsBitField.Flags.AddReactions
     ],
     data: new SlashCommandBuilder(),
-    callback: async (client: Client, interaction: CommandInteraction) => {
+    callback: async (client: Client, interaction: CommandInteraction, loc: localization) => {
         await interaction.deferReply();
-
-        const emb: EmbedBuilder = new EmbedBuilder().setTitle("Pomoc")
+        console.log(loc);
+        const emb: EmbedBuilder = new EmbedBuilder().setTitle(getMessage("cmd_help_title", loc))
         .setTimestamp();
 
         await interaction.editReply({embeds: [emb]});
