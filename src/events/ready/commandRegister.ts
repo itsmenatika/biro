@@ -1,7 +1,8 @@
-import { Client, Interaction, Collection, REST, Routes } from "discord.js";
+import { Client, Interaction, Collection, REST, Routes, SlashCommandBuilder } from "discord.js";
 import {readdirSync} from 'fs';
 import {join as pathJoin} from 'path';
 import type { cmdData } from "../../util/types";
+import {addCommandInformation} from "../../util/langtools";
 
 declare global {
     var commandData: Collection<String, cmdData>;
@@ -56,8 +57,14 @@ module.exports = async (client: Client, interaction: Interaction) => {
                 return;
             }
 
-            let NewNameDict: String[] = command.name.split("."); NewNameDict.pop();
-            const newName: String = NewNameDict.join("");
+            // newName
+            let NewNameDict: string[] = command.name.split("."); NewNameDict.pop();
+            const newName: string = NewNameDict.join("");
+
+            // adding info
+            if(commandFile.hasOwnProperty("addInfo") && commandFile.addInfo){
+                commandFile.data = addCommandInformation(commandFile.data as SlashCommandBuilder, newName);
+            }
 
             // registering
             commandDataForRest.push(commandFile['data']);

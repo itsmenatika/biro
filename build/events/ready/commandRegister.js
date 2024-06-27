@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const discord_js_1 = require("discord.js");
 const fs_1 = require("fs");
 const path_1 = require("path");
+const langtools_1 = require("../../util/langtools");
 module.exports = async (client, interaction) => {
     console.log("registering commands... START");
     var commandCategories = (0, fs_1.readdirSync)((0, path_1.join)(__dirname, "..", "..", "commands"), { withFileTypes: true });
@@ -39,6 +40,9 @@ module.exports = async (client, interaction) => {
             let NewNameDict = command.name.split(".");
             NewNameDict.pop();
             const newName = NewNameDict.join("");
+            if (commandFile.hasOwnProperty("addInfo") && commandFile.addInfo) {
+                commandFile.data = (0, langtools_1.addCommandInformation)(commandFile.data, newName);
+            }
             commandDataForRest.push(commandFile['data']);
             global.commandData.set(newName, commandFile);
             global.commandCategoryData.get(commandCategory.name)?.push(newName);

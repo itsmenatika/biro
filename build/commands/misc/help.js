@@ -2,10 +2,16 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const discord_js_1 = require("discord.js");
 const command = {
-    data: new discord_js_1.SlashCommandBuilder().setName("help")
-        .setDescription("test"),
+    addInfo: true,
+    permissions: [
+        discord_js_1.PermissionsBitField.Flags.AddReactions
+    ],
+    data: new discord_js_1.SlashCommandBuilder(),
     callback: async (client, interaction) => {
-        interaction.reply("test");
+        await interaction.deferReply();
+        const emb = new discord_js_1.EmbedBuilder().setTitle("Pomoc")
+            .setTimestamp();
+        await interaction.editReply({ embeds: [emb] });
         return;
     }
 };

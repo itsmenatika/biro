@@ -1,0 +1,1 @@
+{"version":3,"file":"botStatus.js","sourceRoot":"","sources":["../../../src/events/ready/botStatus.ts"],"names":[],"mappings":";;AAAA,2CAA+D;AAE/D,MAAM,CAAC,OAAO,GAAG,KAAK,EAAE,MAAc,EAAE,WAAwB,EAAE,EAAE;IAChE,MAAM,MAAM,CAAC,IAAI,EAAE,WAAW,CAAC;QAC3B,IAAI,EAAE,yBAAY,CAAC,QAAQ;QAC3B,IAAI,EAAE,YAAY;KACrB,CAAC,CAAC;AACP,CAAC,CAAA"}
