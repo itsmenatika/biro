@@ -72,6 +72,9 @@
     "cmd_server_result_emotesCount_desc": "[$now]/[$max]",   
     "cmd_server_result_owner": "server Owner",
 
+    "cmd_ping_name": "ping",
+    "cmd_ping_desc": "check bot's ping",
+    "cmd_ping_result": "pong! :ping_pong: [$time]ms",
 
 
 

@@ -28,7 +28,7 @@ const command = {
             return;
         }
         if (interaction.user.id === mentionedUser.id) {
-            let emb = new discord_js_1.EmbedBuilder().setFooter({
+            let emb = new discord_js_1.EmbedBuilder().setTimestamp().setFooter({
                 text: (0, langtools_1.parseMessage)("cmd_executed_by", loc, { user: interaction.user.displayName }),
                 iconURL: String(interaction.user.avatarURL())
             }).setColor("Blurple").setTitle((0, langtools_1.getMessage)("noooooo", loc))
@@ -36,7 +36,7 @@ const command = {
             await interaction.editReply({ embeds: [emb] });
             return;
         }
-        let emb = new discord_js_1.EmbedBuilder().setFooter({
+        let emb = new discord_js_1.EmbedBuilder().setTimestamp().setFooter({
             text: (0, langtools_1.parseMessage)("cmd_executed_by", loc, { user: interaction.user.displayName }),
             iconURL: String(interaction.user.avatarURL())
         }).setColor("Aqua")

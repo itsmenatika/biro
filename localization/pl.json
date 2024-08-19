@@ -72,6 +72,10 @@
     "cmd_server_result_emotesCount_desc": "[$now]/[$max]",  
     "cmd_server_result_owner": "własciciel serwera",
 
+    "cmd_ping_name": "ping",
+    "cmd_ping_desc": "sprawdź ping bota",
+    "cmd_ping_result": "pong! :ping_pong: [$time]ms",
+
     "_COMMENT050001": "----common components----",
     "id": "id",
     "error": "Błąd",

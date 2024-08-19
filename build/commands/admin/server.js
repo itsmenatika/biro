@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const discord_js_1 = require("discord.js");
 const langtools_1 = require("../../util/langtools");
+const embtools_1 = require("../../util/embtools");
 const command = {
     addInfo: true,
     permissions: [],
@@ -10,6 +11,11 @@ const command = {
         await interaction.deferReply();
         const guild = interaction.guild;
         if (guild == null) {
+            await interaction.editReply({
+                embeds: [
+                    (0, embtools_1.errorBuilder)("notOnGuild", interaction, loc, {})
+                ]
+            });
             return;
         }
         let maxEmojis = 50;

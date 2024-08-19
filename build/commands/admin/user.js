@@ -28,7 +28,8 @@ const command = {
         let emb = new discord_js_1.EmbedBuilder().setFooter({
             text: (0, langtools_1.parseMessage)("cmd_executed_by", loc, { user: interaction.user.displayName }),
             iconURL: String(interaction.user.avatarURL())
-        }).setColor("Aqua").setDescription(`<@${mentionedUser.id}>`)
+        }).setTimestamp()
+            .setColor("Aqua").setDescription(`<@${mentionedUser.id}>`)
             .setTitle((0, langtools_1.parseMessage)("cmd_user_result_title", loc, { userName: mentionedUser.displayName })).setTimestamp();
         let roles = [];
         mentionedUser.roles.cache.forEach(element => {
@@ -38,7 +39,7 @@ const command = {
         console.log(roles);
         emb.addFields([
             {
-                name: "id",
+                name: (0, langtools_1.getMessage)('id', loc),
                 value: mentionedUser.id,
                 inline: true
             },
