@@ -7,7 +7,7 @@
       "allowJs": true,
       "checkJs": false,
       "outDir": "build",
-      "sourceMap": true,
+      "sourceMap": false,
       "strict": true,
       "alwaysStrict": true,
       "moduleResolution": "node",

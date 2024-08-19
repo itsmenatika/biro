@@ -43,4 +43,3 @@ eventTypes.forEach((eventType) => {
 });
 client.login(process.env.DISCORDTOKEN);
 console.log("bot connected to the discord!");
-//# sourceMappingURL=index.js.map

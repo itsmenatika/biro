@@ -63,4 +63,3 @@ module.exports = async (client, interaction) => {
         console.log("sending slash commands via REST API... Sent!...");
     })();
 };
-//# sourceMappingURL=commandRegister.js.map

@@ -45,7 +45,29 @@ function addCommandInformation(command: SlashCommandBuilder, commandName: string
     .setDescriptionLocalizations(getFullDictOf(`cmd_${commandName}_desc`));
 }
 
-export {getMessage, getFullDictOf, addCommandInformation}
+/**
+ * allows you to parse messages with arguments written like that [$argument]
+ * @param {message} message entry in localization json
+ * @param {localization} loc what localization do you want take from
+*  @param {Record<string, string>} addInfo table of arguments
+ * @return {string} parsed json entry
+ */
+function parseMessage(message: string, loc: localization, addinfo: Record<string, string>): string{
+    // declare 
+    let temp: string = getMessage(message, loc);
+
+    // parse
+    for(let key in addinfo){
+        while(temp.includes(`[$${key}]`)){
+            temp = temp.replace(`[$${key}]`, addinfo[key]);
+        }
+    }
+
+    // just return
+    return temp;
+}
+
+export {getMessage, getFullDictOf, addCommandInformation, parseMessage}
 
 // module.exports = {
 //     getMessage: getMessage,

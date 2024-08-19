@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.addCommandInformation = exports.getFullDictOf = exports.getMessage = void 0;
+exports.parseMessage = exports.addCommandInformation = exports.getFullDictOf = exports.getMessage = void 0;
 const pl_json = require("../../localization/pl.json");
 const en_json = require("../../localization/en.json");
 const types_1 = require("./types");
@@ -41,4 +41,13 @@ function addCommandInformation(command, commandName) {
         .setDescriptionLocalizations(getFullDictOf(`cmd_${commandName}_desc`));
 }
 exports.addCommandInformation = addCommandInformation;
-//# sourceMappingURL=langtools.js.map
+function parseMessage(message, loc, addinfo) {
+    let temp = getMessage(message, loc);
+    for (let key in addinfo) {
+        while (temp.includes(`[$${key}]`)) {
+            temp = temp.replace(`[$${key}]`, addinfo[key]);
+        }
+    }
+    return temp;
+}
+exports.parseMessage = parseMessage;

@@ -8,4 +8,3 @@ var localization;
     localization["en_GB"] = "en";
     localization["en_UK"] = "en";
 })(localization || (exports.localization = localization = {}));
-//# sourceMappingURL=types.js.map

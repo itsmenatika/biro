@@ -7,4 +7,3 @@ module.exports = async (client, interaction) => {
         name: "you all :3"
     });
 };
-//# sourceMappingURL=botStatus.js.map
