@@ -13,7 +13,7 @@ const command: cmdData = {
         option.setName("user")
         .setDescription(getMessage("cmd_user_option_user_desc", localization.en))
         .setNameLocalizations(getFullDictOf("cmd_user_option_user_name"))
-        .setDescriptionLocalizations(getFullDictOf("cmd_user_option_user_name"))
+        .setDescriptionLocalizations(getFullDictOf("cmd_user_option_user_desc"))
         // .setRequired(true)
     ),
     callback: async (client: Client, interaction: CommandInteraction, loc: localization) => {

@@ -76,7 +76,14 @@
     "cmd_ping_desc": "sprawdź ping bota",
     "cmd_ping_result": "pong! :ping_pong: [$time]ms",
 
+    "cmd_clear_name": "wyczyść",
+    "cmd_clear_desc": "usuń trochę wiadomości",
+    "cmd_clear_option_howMany_name": "ilość",
+    "cmd_clear_option_howMany_desc": "jak dużo",
+    "cmd_clear_result_title": "Wyczyszczono poprawnie kanał!",
+
     "_COMMENT050001": "----common components----",
+    "wait...": "czekaj...",
     "id": "id",
     "error": "Błąd",
     "error_with_comma": "Błąd,",
@@ -94,6 +101,7 @@
 
     "perm_manageChannels": "zarządzanie kanałami",
     "perm_ManageChannels": "zarządzanie kanałami",
+    "perm_ManageMessages": "zarządzanie wiadomości",
 
 
     "_COMMENT080001": "----errors----",

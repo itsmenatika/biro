@@ -10,7 +10,7 @@ const command = {
     data: new discord_js_1.SlashCommandBuilder().addUserOption(option => option.setName("user")
         .setDescription((0, langtools_1.getMessage)("cmd_user_option_user_desc", types_1.localization.en))
         .setNameLocalizations((0, langtools_1.getFullDictOf)("cmd_user_option_user_name"))
-        .setDescriptionLocalizations((0, langtools_1.getFullDictOf)("cmd_user_option_user_name"))),
+        .setDescriptionLocalizations((0, langtools_1.getFullDictOf)("cmd_user_option_user_desc"))),
     callback: async (client, interaction, loc) => {
         await interaction.deferReply();
         let mentionedUser = interaction.options.get("user")?.member;

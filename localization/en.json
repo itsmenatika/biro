@@ -76,13 +76,17 @@
     "cmd_ping_desc": "check bot's ping",
     "cmd_ping_result": "pong! :ping_pong: [$time]ms",
 
-
-
+    "cmd_clear_name": "clear",
+    "cmd_clear_desc": "clear some messages",
+    "cmd_clear_option_howMany_name": "howmuch",
+    "cmd_clear_option_howMany_desc": "how much messages do you want to delete",
+    "cmd_clear_result_title": "The channel has been cleared!",
 
 
 
 
     "_COMMENT050001": "----common components----",
+    "wait...": "wait...",
     "id": "id",
     "error": "Error",
     "error_with_comma": "Error, ",
@@ -100,6 +104,7 @@
 
     "perm_manageChannels": "manage Channels",
     "perm_ManageChannels": "manage Channels",
+    "perm_ManageMessages": "manage messages",
 
     "_COMMENT080001": "----errors----",
     "error_noUser_name": "no user",
