@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const discord_js_1 = require("discord.js");
 const langtools_1 = require("../../util/langtools");
-module.exports = async (client, interaction, loc) => {
+module.exports = async (client, interaction, loc, con) => {
     const firstChannel = interaction.guild?.channels.cache.find((channel) => channel.type === discord_js_1.ChannelType.GuildText);
     if (firstChannel === undefined || !(firstChannel instanceof discord_js_1.TextChannel))
         return;

@@ -17,4 +17,9 @@ function errorBuilder(errorName: string, interaction: Interaction|CommandInterac
 }
 
 
-export {errorBuilder}
+function logBuilder(logName: string, interaction: Interaction|CommandInteraction, loc: localization, addInfo: Record<string, string>): EmbedBuilder{
+    return new EmbedBuilder().setTimestamp()
+    .setTitle(getMessage(`log_${logName}_title`, loc))
+}
+
+export {errorBuilder, logBuilder}

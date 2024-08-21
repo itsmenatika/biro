@@ -2,6 +2,7 @@ import { Client, CommandInteraction, EmbedBuilder, SlashCommandBuilder,  Guild }
 import { cmdData, localization } from "../../util/types";
 import { getMessage, parseMessage } from "../../util/langtools";
 import { errorBuilder } from "../../util/embtools";
+import { Pool } from "mysql2/typings/mysql/lib/Pool";
 
 
 const command: cmdData = {
@@ -9,7 +10,7 @@ const command: cmdData = {
     permissions: [
     ],
     data: new SlashCommandBuilder(),
-    callback: async (client: Client, interaction: CommandInteraction, loc: localization) => {
+    callback: async (client: Client, interaction: CommandInteraction, loc: localization, Connection: Pool) => {
         // await interaction to give more time for a bot
         await interaction.deferReply();
 

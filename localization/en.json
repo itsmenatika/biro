@@ -82,7 +82,17 @@
     "cmd_clear_option_howMany_desc": "how much messages do you want to delete",
     "cmd_clear_result_title": "The channel has been cleared!",
 
+    "cmd_test_name": "test",
+    "cmd_test_desc": "that's command for testing new features",
 
+    "cmd_admin_name": "admin",
+    "cmd_admin_desc": "administrator's commands",
+    "cmd_admin_result_logChannelSet_title": "Log channel has been set!",
+    "cmd_admin_result_logChannelSet_desc": "Log channel has been set to <#[$channelID]> successfully!",
+    "cmd_admin_result_logChannelUnset_title": "log channel has got deactived!",
+    "cmd_admin_result_logChannelUnset_desc": "There will be no longer any logs!",
+
+    "cmd_level_name": "level",
 
 
     "_COMMENT050001": "----common components----",
@@ -121,6 +131,8 @@
     "error_apiError_desc": "Bot couldn't connect to an api named `[$apiName]`!",
     "error_notOnGuild_name": "Wrong use place",
     "error_notOnGuild_desc": "You can't perform this action outside discord guild!",
+    "error_database_name": "database error",
+    "error_database_desc": "Bot couldn't estabilish good connection with database or something went wrong while perfoming a quary!",
     "error_unkown_name": "unkown error",
     "error_unkown_desc": "An unkown error has occured!\nAdditional information that we've received:\n[$addInfo]",
     "error_commandNotFound_name": "Unkown name of sent command!",

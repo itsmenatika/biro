@@ -16,7 +16,7 @@ const command = {
         .setNameLocalizations((0, langtools_1.getFullDictOf)("cmd_bite_option_user_name"))
         .setDescriptionLocalizations((0, langtools_1.getFullDictOf)("cmd_bite_option_user_name"))
         .setRequired(true)),
-    callback: async (client, interaction, loc) => {
+    callback: async (client, interaction, loc, connection) => {
         await interaction.deferReply();
         let mentionedUser = interaction.options.get("user")?.member;
         if (mentionedUser === null || mentionedUser === undefined) {

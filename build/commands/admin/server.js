@@ -7,7 +7,7 @@ const command = {
     addInfo: true,
     permissions: [],
     data: new discord_js_1.SlashCommandBuilder(),
-    callback: async (client, interaction, loc) => {
+    callback: async (client, interaction, loc, Connection) => {
         await interaction.deferReply();
         const guild = interaction.guild;
         if (guild == null) {

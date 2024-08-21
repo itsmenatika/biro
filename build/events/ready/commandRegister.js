@@ -4,7 +4,7 @@ const discord_js_1 = require("discord.js");
 const fs_1 = require("fs");
 const path_1 = require("path");
 const langtools_1 = require("../../util/langtools");
-module.exports = async (client, interaction) => {
+module.exports = async (client, interaction, connection) => {
     console.log("registering commands... START");
     var commandCategories = (0, fs_1.readdirSync)((0, path_1.join)(__dirname, "..", "..", "commands"), { withFileTypes: true });
     var commandDataForRest = [];
@@ -58,7 +58,7 @@ module.exports = async (client, interaction) => {
         const data = await rest.put(discord_js_1.Routes.applicationGuildCommands(String(process.env.DISCORDAPPID), String(process.env.DISCORDTESTGUILD)), {
             body: commandDataForRest
         }).catch((err) => {
-            console.log(`REST API ERROR: {err}`);
+            console.log(`REST API ERROR: ${err}`);
         });
         console.log("sending slash commands via REST API... Sent!...");
     })();

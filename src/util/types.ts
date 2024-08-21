@@ -1,6 +1,7 @@
 import { Client, CommandInteraction, PermissionsBitField } from "discord.js";
+import { Pool } from "mysql2/typings/mysql/lib/Pool";
 
-type callbackFunction = (client: Client, interaction: CommandInteraction, localization: localization) => Promise<Boolean | void>;
+type callbackFunction = (client: Client, interaction: CommandInteraction, localization: localization, connection: Pool) => Promise<Boolean | void>;
 
 enum localization {
     pl = "pl",

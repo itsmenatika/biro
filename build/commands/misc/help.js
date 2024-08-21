@@ -8,7 +8,7 @@ const command = {
         discord_js_1.PermissionsBitField.Flags.AddReactions
     ],
     data: new discord_js_1.SlashCommandBuilder(),
-    callback: async (client, interaction, loc) => {
+    callback: async (client, interaction, loc, connection) => {
         await interaction.deferReply();
         let user = interaction.user;
         const emb = new discord_js_1.EmbedBuilder().setTitle((0, langtools_1.getMessage)("cmd_help_title", loc))

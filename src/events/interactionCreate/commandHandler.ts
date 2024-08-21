@@ -2,10 +2,11 @@ import { BitField, Client, Interaction, PermissionsBitField } from "discord.js";
 import { localization } from "../../util/types";
 import { errorBuilder } from "../../util/embtools";
 import { getMessage } from "../../util/langtools";
+import { Pool } from "mysql2/typings/mysql/lib/Pool";
 
 
 
-module.exports = async (client: Client, interaction: Interaction, loc: localization) => {
+module.exports = async (client: Client, interaction: Interaction, loc: localization, connection: Pool) => {
     // console.log(interaction);
     if(!interaction.isCommand()) return;
 
@@ -73,7 +74,7 @@ module.exports = async (client: Client, interaction: Interaction, loc: localizat
         }
     }
 
-    await cmd?.callback(client,interaction, loc);
+    await cmd?.callback(client,interaction, loc, connection);
 }
 
 

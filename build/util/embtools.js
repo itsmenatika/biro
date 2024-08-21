@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.errorBuilder = void 0;
+exports.logBuilder = exports.errorBuilder = void 0;
 const discord_js_1 = require("discord.js");
 const langtools_1 = require("./langtools");
 function errorBuilder(errorName, interaction, loc, addInfo) {
@@ -14,3 +14,11 @@ function errorBuilder(errorName, interaction, loc, addInfo) {
         .setDescription((0, langtools_1.parseMessage)(`error_${errorName}_desc`, loc, { errorName: errorName, ...addInfo }));
 }
 exports.errorBuilder = errorBuilder;
+function logBuilder(logName, interaction, loc, addInfo) {
+    return new discord_js_1.EmbedBuilder().setTimestamp()
+        .setFooter({
+        text: (0, langtools_1.parseMessage)("cmd_executed_by", loc, { user: (0, langtools_1.getMessage)("bot_ex_logger", loc) }),
+        iconURL: String(interaction.user.avatarURL())
+    });
+}
+exports.logBuilder = logBuilder;

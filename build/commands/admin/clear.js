@@ -18,7 +18,7 @@ const command = {
         .setRequired(true)
         .setMinValue(1)
         .setMaxValue(1000)),
-    callback: async (client, interaction, loc) => {
+    callback: async (client, interaction, loc, connection) => {
         await interaction.reply((0, langtools_1.getMessage)("wait...", loc));
         const howMany = Number(interaction.options.get("howmany")?.value);
         if (howMany > 1000)

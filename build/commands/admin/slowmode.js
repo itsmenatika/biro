@@ -18,7 +18,7 @@ const command = {
         .setDescription((0, langtools_1.getMessage)("reason_desc", types_1.localization.en))
         .setNameLocalizations((0, langtools_1.getFullDictOf)("reason"))
         .setDescriptionLocalizations((0, langtools_1.getFullDictOf)("reason_desc"))),
-    callback: async (client, interaction, loc) => {
+    callback: async (client, interaction, loc, Connection) => {
         await interaction.deferReply();
         const duration = Number(interaction.options.get("duration")?.value);
         const reason = interaction.options.get("reason")?.value;

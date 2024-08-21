@@ -82,6 +82,16 @@
     "cmd_clear_option_howMany_desc": "jak dużo",
     "cmd_clear_result_title": "Wyczyszczono poprawnie kanał!",
 
+    "cmd_test_name": "test",
+    "cmd_test_desc": "komenda testowa",
+
+    "cmd_admin_name": "admin",
+    "cmd_admin_desc": "komendy administratora",
+    "cmd_admin_result_logChannelSet_title": "Ustawiono kanał logów!",
+    "cmd_admin_result_logChannelSet_desc": "Kanał logów został ustawiony na <#[$channelID]>!",
+    "cmd_admin_result_logChannelUnset_title": "Wyłączono kanał logów!",
+    "cmd_admin_result_logChannelUnset_desc": "Logi na kanale zostały ustawione jako nieistniejące!",
+
     "_COMMENT050001": "----common components----",
     "wait...": "czekaj...",
     "id": "id",
@@ -117,6 +127,8 @@
     "error_botPermissions_desc": "Bot nie ma wystarczających uprawnień do wykonania tej akcji (min: `[$permName]`)!",
     "error_notOnGuild_name": "Złe miejsce użycia",
     "error_notOnGuild_desc": "Nie możesz wykonać tej akcji poza serwerem discord!",
+    "error_database_name": "Bład bazy danych",
+    "error_database_desc": "Bot nie mógł ustabilizować dobrego połaczenia z bazą danych lub coś poszło nie tak podczas wykonywania zaytania!",
     "error_unkown_name": "nieznany błąd",
     "error_unkown_desc": "Wystąpił nieznany wyjątek w trakcie wykonywana operacji!\nDodatkowe informacje które mamy:\n [$addInfo]",
     "error_commandNotFound_name": "Nieznana nazwa wysłanej komendy",

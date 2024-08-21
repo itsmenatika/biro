@@ -3,6 +3,7 @@ import { SlashCommandBuilder, Client, CommandInteraction, PermissionsBitField, E
 import { cmdData, localization } from "../../util/types";
 import { getFullDictOf, getMessage, parseMessage } from "../../util/langtools";
 import { errorBuilder } from "../../util/embtools";
+import { Pool } from "mysql2/typings/mysql/lib/Pool";
 
 
 const command: cmdData = {
@@ -23,7 +24,7 @@ const command: cmdData = {
         .setNameLocalizations(getFullDictOf("reason"))
         .setDescriptionLocalizations(getFullDictOf("reason_desc"))
     ),
-    callback: async (client: Client, interaction: CommandInteraction, loc: localization) => {
+    callback: async (client: Client, interaction: CommandInteraction, loc: localization, Connection: Pool) => {
         await interaction.deferReply();
 
         const duration: Number = Number(interaction.options.get("duration")?.value);

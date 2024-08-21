@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const discord_js_1 = require("discord.js");
 const embtools_1 = require("../../util/embtools");
 const langtools_1 = require("../../util/langtools");
-module.exports = async (client, interaction, loc) => {
+module.exports = async (client, interaction, loc, connection) => {
     if (!interaction.isCommand())
         return;
     const cmd = global.commandData.get(interaction.commandName);
@@ -49,5 +49,5 @@ module.exports = async (client, interaction, loc) => {
             return;
         }
     }
-    await cmd?.callback(client, interaction, loc);
+    await cmd?.callback(client, interaction, loc, connection);
 };

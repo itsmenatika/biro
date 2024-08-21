@@ -5,7 +5,7 @@ const langtools_1 = require("../../util/langtools");
 const command = {
     addInfo: true,
     data: new discord_js_1.SlashCommandBuilder(),
-    callback: async (client, interaction, loc) => {
+    callback: async (client, interaction, loc, Connection) => {
         await interaction.deferReply();
         const reply = await interaction.fetchReply();
         const time = reply.createdTimestamp - interaction.createdTimestamp;

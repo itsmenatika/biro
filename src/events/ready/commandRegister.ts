@@ -3,13 +3,14 @@ import {readdirSync} from 'fs';
 import {join as pathJoin} from 'path';
 import type { cmdData } from "../../util/types";
 import {addCommandInformation} from "../../util/langtools";
+import { Pool } from "mysql2/typings/mysql/lib/Pool";
 
 declare global {
     var commandData: Collection<String, cmdData>;
     var commandCategoryData: Collection<string, Array<String>>;
 }
 
-module.exports = async (client: Client, interaction: Interaction) => {
+module.exports = async (client: Client, interaction: Interaction, connection: Pool) => {
     console.log("registering commands... START")
 
     var commandCategories = readdirSync(pathJoin(__dirname, "..", "..", "commands"), {withFileTypes: true});
@@ -91,7 +92,10 @@ module.exports = async (client: Client, interaction: Interaction) => {
                 body: commandDataForRest
             }
         ).catch((err) => {
-            console.log(`REST API ERROR: {err}`);
+            console.log(`REST API ERROR: ${err}`);
+
+            // if error doesn't help uncomment this!
+            // throw err;
         });
 
         console.log("sending slash commands via REST API... Sent!...");

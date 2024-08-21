@@ -1,6 +1,7 @@
 import { Client, CommandInteraction, Embed, EmbedBuilder, Interaction, PermissionsBitField, SlashCommandBuilder, RestOrArray, APIEmbedField } from "discord.js";
 import { cmdData, localization } from "../../util/types";
 import { getMessage, parseMessage } from "../../util/langtools";
+import { Pool } from "mysql2/typings/mysql/lib/Pool";
 
 
 const command: cmdData = {
@@ -9,7 +10,7 @@ const command: cmdData = {
         PermissionsBitField.Flags.AddReactions
     ],
     data: new SlashCommandBuilder(),
-    callback: async (client: Client, interaction: CommandInteraction, loc: localization) => {
+    callback: async (client: Client, interaction: CommandInteraction, loc: localization, connection: Pool) => {
         // await interaction to give more time for a bot
         await interaction.deferReply();
         

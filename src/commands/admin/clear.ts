@@ -3,6 +3,7 @@ import axios, { AxiosResponse } from "axios";
 import { cmdData, localization } from "../../util/types";
 import { getFullDictOf, getMessage, parseMessage } from "../../util/langtools";
 import { errorBuilder } from "../../util/embtools";
+import { Pool } from "mysql2/typings/mysql/lib/Pool";
 
 
 const command: cmdData = {
@@ -22,7 +23,7 @@ const command: cmdData = {
         .setMinValue(1)
         .setMaxValue(1000)
     ),
-    callback: async (client: Client, interaction: CommandInteraction, loc: localization) => {
+    callback: async (client: Client, interaction: CommandInteraction, loc: localization, connection: Pool) => {
         await interaction.reply(getMessage("wait...", loc));
 
         // options
